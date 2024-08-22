@@ -1,15 +1,5 @@
 QBCore = exports['qb-core']:GetCoreObject()
 
-local expectedResourceName = "fixstore-toplama"
-local currentResourceName = GetCurrentResourceName()
-if currentResourceName ~= expectedResourceName then
-    StopResource(currentResourceName)
-    Citizen.CreateThread(function()
-        Citizen.Wait(1000)
-        os.exit(1)
-    end)
-end
-
 CreateThread(function()
 	while true do
 		sleep = 100
